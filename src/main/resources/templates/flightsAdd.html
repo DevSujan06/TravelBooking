@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Flight</title>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+<body>
+    <div class="container">
+        <h1>Add New Flight</h1>
+        <form th:action="@{/flights/add}" method="post">
+            <div>
+                <label for="origin">Origin:</label>
+                <input type="text" id="origin" name="origin" placeholder="Enter origin city" required />
+            </div>
+            <div>
+                <label for="destination">Destination:</label>
+                <input type="text" id="destination" name="destination" placeholder="Enter destination city" required />
+            </div>
+            <div>
+                <label for="price">Price:</label>
+                <input type="number" id="price" name="price" placeholder="Enter flight price" step="0.01" required />
+            </div>
+            <div>
+                <label for="availableSeats">Available Seats:</label>
+                <input type="number" id="availableSeats" name="availableSeats" placeholder="Enter number of seats" required />
+            </div>
+            <button type="submit">Add Flight</button>
+        </form>
+        <a href="/flights" class="back-link">Back to Flights</a>
+    </div>
+</body>
+</html>
